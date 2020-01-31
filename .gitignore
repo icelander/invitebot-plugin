@@ -6,3 +6,7 @@ node_modules
 
 # VSCode
 .vscode
+
+# Added from Template:
+
+README.orig.md
