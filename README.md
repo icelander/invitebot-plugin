@@ -4,13 +4,13 @@
 
 This plugin automates the process of inviting guests to a Mattermost server. This link can be shared publicly, and users just have to enter their email addresses to get an invitation to join specific channels on a Mattermost server. This is great for onboarding new community members or engaging with conference attendees.
 
-
 ## Configuration Settings
 
 | Setting         | Type | Default Value                                                            |
 |:----------------|:-----|:-------------------------------------------------------------------------|
+| InviteBotID     | ID   | ID of the InviteBot 														|
+| UserID          | ID   | ID of the user who created the Invitebot 							    |
 | LandingHTML     | Text | Stored in `assets/landing_default.html`                                  |
-| UserID          | Text | ID of the user to send the invites from, must have channel admin rights  |
 | ThankYouHtml    | Text | stored in `assets/thankyou_default.html`                                 |
 | ErrorHTML       | Text | stored in `assets/error_default.html`                                    |
 | MarketoCampaign | Text | The campaign to link the new users to                                    |
@@ -19,28 +19,26 @@ This plugin automates the process of inviting guests to a Mattermost server. Thi
 ## To Do
 
  - [ ] Serve a customizable HTML page
- 	- [ ] Serve *anything* from the plugin
- 	- [ ] Store custom HTML in the configuration
+ 	- [x] Serve *anything* from the plugin (v0.0.1)
+ 	- [ ] Store custom HTML in basic configuration (v0.1.0)
  	- [ ] Allow specific channels to create guest invite links
- - [ ] Accept the user's email address
- 	- [ ] Accept a POST request on a plugin page
- 	- [ ] Validate the request
- 	- [ ] Send a guest invitation
- 	- [ ] Log the request
- - [ ] Send Lead to Marketo
+ - [ ] Accept the user's email address (v0.1.0)
+ 	- [ ] Accept a POST request on a plugin page (v0.1.0)
+ 	- [ ] Validate the request (v0.1.0)
+ 		- [ ] Validate that it's an email address (v0.1.0)
+ 		- [ ] Check if it's an existing user (v0.1.0)
+ 	- [ ] Send a guest invitation (v0.1.0)
+ 	- [ ] Log the request (v0.1.0)
+ - [ ] Send Lead to Marketo (v0.2.0)
  	 - https://github.com/icelander/goketo
  	 - https://developers.marketo.com/rest-api/lead-database/leads/#create_and_update
 
 ## Future Features
 
- - [ ] Per-channel invitation links
- 	- [ ] Invitation is sent from Channel Admin
- 	- [ ] Slash commands:
- 		- [ ] `/invitebot setup` - Adds channel, only available to system administrators
- 		- [ ] `/invitebot settings` - Opens settings dialog, only available to Channel admin or higher
- 		- [ ] `/invitebot link` - Outputs the invitation link in an ephemeral message
- 		- [ ] `/invitebot invite <email>` - Sends an email invitation and responds with an ephemeral message
+ - [ ] Multiple Invitebots
+ - [ ] Bot User
  - [ ] Customizable fields that link to Marketo Lead Fields
  	- Use `/rest/v1/leads/describe.json` to get fields
  	- Require specific fields
  - [ ] Customizable email templates
+ - [ ] Admin account approval
