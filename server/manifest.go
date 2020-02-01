@@ -15,7 +15,7 @@ const manifestStr = `
   "id": "invitebot",
   "name": "InviteBot Plugin",
   "description": "Allows users to request invitations to guest accounts on a Mattermost server",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "min_server_version": "5.12.0",
   "server": {
     "executables": {
